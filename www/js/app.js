@@ -48,15 +48,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
     }
   })
 
-      .state('app.scanner',{
-          url: "/scanner",
-          views: {
-              'menuContent' : {
-                  templateUrl: "templates/scanner.html",
-                  controller: "scannerCtrl"
-              }
-          }
-      });
+  .state('app.scanner',{
+    url: "/scanner",
+    views: {
+      'menuContent' : {
+        templateUrl: "templates/scanner.html"
+      }
+    },
+    controller: "scannerCtrl"
+  });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/scanner');
 });

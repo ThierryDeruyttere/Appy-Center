@@ -1,14 +1,14 @@
 angular.module('starter.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
-  
+
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
   // listen for the $ionicView.enter event:
   //$scope.$on('$ionicView.enter', function(e) {
   //});
-  
+
   // Form data for the login modal
   $scope.loginData = {};
 
@@ -44,6 +44,7 @@ angular.module('starter.controllers', [])
 .controller("scannerCtrl", function($scope, $cordovaBarcodeScanner) {
 
   $scope.scanBarcode = function() {
+    console.log("Starting scan...");
     $cordovaBarcodeScanner.scan().then(function(imageData) {
       alert(imageData.text);
       console.log("Barcode Format -> " + imageData.format);
@@ -54,9 +55,3 @@ angular.module('starter.controllers', [])
   };
 
 })
-
-
-.controller('scannerCtrl', function($scope){
-
-    });
-
