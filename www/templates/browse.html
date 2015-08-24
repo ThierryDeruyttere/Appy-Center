@@ -1,5 +1,9 @@
 <ion-view view-title="Appy Store">
-  <ion-content>
-    <input type="text" placeholder="Search...">
-  </ion-content>
+    <ion-content>
+        <label class="item item-input">
+            <input type="text" placeholder="Search...">
+        </label>
+        <button type="button" id="download" class="button button-positive" ng-click="download()">Download</button>
+        <label ng-model="downloadProgress">0</label>
+    </ion-content>
 </ion-view>
