@@ -14,15 +14,12 @@
 
   <ion-side-menu side="left">
     <ion-header-bar class="bar-stable">
-      <h1 class="title">Left</h1>
+      <h1 class="title">Actions</h1>
     </ion-header-bar>
     <ion-content>
       <ion-list>
         <ion-item menu-close ng-click="login()">
           Login
-        </ion-item>
-        <ion-item menu-close href="#/app/search">
-          Search
         </ion-item>
         <ion-item menu-close href="#/app/browse">
           Browse
@@ -30,7 +27,13 @@
         <ion-item menu-close ng-controller="scannerCtrl" ng-click="scanBarcode()">
           Scanner
         </ion-item>
+          <ion-item menu-close href="#/app/browse">
+              Favorites
+          </ion-item>
+
+
       </ion-list>
+
     </ion-content>
   </ion-side-menu>
 </ion-side-menus>
