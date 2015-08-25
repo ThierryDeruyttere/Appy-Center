@@ -55,7 +55,7 @@ angular.module('starter.controllers', [])
             $cordovaFileTransfer.download(url, targetPath, options, trustHosts)
                 .then(function(result) {
                     // Success!
-                    var progressPopup = $ionicPopup.confirm({
+                    var progressPopup = $ionicPopup.alert({
                         title: 'Download finished',
                         template: 'The appy has been downloaded!'
                     });
