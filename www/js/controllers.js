@@ -41,9 +41,10 @@ angular.module('starter.controllers', [])
         };
     })
 
-    .controller("scannerCtrl", function($scope, $cordovaBarcodeScanner, $timeout, $cordovaFileTransfer) {
+    .controller("scannerCtrl", function($scope, $cordovaBarcodeScanner, $timeout, $cordovaFileTransfer, $ionicPopup) {
 
-        console.log("Starting scan...");
+
+        // console.log("Starting scan...");
         $cordovaBarcodeScanner.scan().then(function(imageData) {
 
             var url = imageData.text;
@@ -54,12 +55,24 @@ angular.module('starter.controllers', [])
             $cordovaFileTransfer.download(url, targetPath, options, trustHosts)
                 .then(function(result) {
                     // Success!
-                    alert("Done!");
+                    var progressPopup = $ionicPopup.confirm({
+                        title: 'Download finished',
+                        template: 'The appy has been downloaded!'
+                    });
+                    progressPopup.then(function(res) {
+                        if(res) {
+                            console.log('You are sure');
+                        } else {
+                            console.log('You are not sure');
+                        }
+                    });
+
                 }, function(err) {
                     // Error
                     alert("Error");
                 }, function (progress) {
                     $timeout(function () {
+                        // Show progress
                         $scope.downloadProgress = (progress.loaded / progress.total) * 100;
                     })
                 });
