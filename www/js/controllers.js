@@ -43,31 +43,29 @@ angular.module('starter.controllers', [])
 
     .controller("scannerCtrl", function($scope, $cordovaBarcodeScanner, $timeout, $cordovaFileTransfer) {
 
-        $scope.scanBarcode = function() {
-            console.log("Starting scan...");
-            $cordovaBarcodeScanner.scan().then(function(imageData) {
+        console.log("Starting scan...");
+        $cordovaBarcodeScanner.scan().then(function(imageData) {
 
-                var url = imageData.text;
-                var targetPath = cordova.file.documentsDirectory + "testImage.png";
-                var trustHosts = true;
-                var options = {};
+            var url = imageData.text;
+            var targetPath = cordova.file.documentsDirectory + "testImage.png";
+            var trustHosts = true;
+            var options = {};
 
-                $cordovaFileTransfer.download(url, targetPath, options, trustHosts)
-                    .then(function(result) {
-                        // Success!
-                        alert("Done!");
-                    }, function(err) {
-                        // Error
-                        alert("Error");
-                    }, function (progress) {
-                        $timeout(function () {
-                            $scope.downloadProgress = (progress.loaded / progress.total) * 100;
-                        })
-                    });
-            }, function(error) {
-                console.log("An error happened -> " + error);
-            });
-        };
+            $cordovaFileTransfer.download(url, targetPath, options, trustHosts)
+                .then(function(result) {
+                    // Success!
+                    alert("Done!");
+                }, function(err) {
+                    // Error
+                    alert("Error");
+                }, function (progress) {
+                    $timeout(function () {
+                        $scope.downloadProgress = (progress.loaded / progress.total) * 100;
+                    })
+                });
+        }, function(error) {
+            console.log("An error happened -> " + error);
+        });
 
     })
 
