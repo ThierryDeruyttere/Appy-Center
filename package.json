@@ -24,11 +24,7 @@
     "phonegap-plugin-file-transfer"
   ],
   "cordovaPlatforms": [
-    {
-      "platform": "android",
-      "locator": "browser"
-    },
-    "android",
-    "ios"
+    "ios",
+    "android"
   ]
 }
