@@ -40,6 +40,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
                 }
             })
 
+            .state('app.download', {
+                url: "/download/:downloadUrl",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/download.html",
+                        controller: 'downloadCtrl'
+                    }
+                }
+            })
+
             .state('app.scanner', {
                 url: "/scanner",
                 views: {
