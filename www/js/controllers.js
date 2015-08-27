@@ -41,9 +41,7 @@ angular.module('starter.controllers', [])
         };
     })
 
-
     .controller("scannerCtrl", function($scope, $cordovaBarcodeScanner, $state, $timeout, $route) {
-
 
         // console.log("Starting scan...");
         $cordovaBarcodeScanner.scan().then(function(imageData) {
@@ -55,7 +53,7 @@ angular.module('starter.controllers', [])
 
     })
 
-    .controller("downloadCtrl", function($scope, $stateParams,  $cordovaFileTransfer, $ionicPopup, $timeout) {
+    .controller("downloadCtrl", function($scope, $stateParams, $cordovaFileTransfer, $ionicPopup, $timeout) {
 
         var url = $stateParams.downloadUrl;
         var targetPath = cordova.file.documentsDirectory + "testImage.png";
