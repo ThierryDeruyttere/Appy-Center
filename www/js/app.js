@@ -58,6 +58,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
                         controller: 'scannerCtrl'
                     }
                 }
+            })
+
+            .state('app.testpage', {
+                url: "/testpage",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/testpage.html",
+                        controller: 'testpageCtrl'
+                    }
+                }
             });
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/app/browse');

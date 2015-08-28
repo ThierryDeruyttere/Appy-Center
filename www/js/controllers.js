@@ -99,4 +99,7 @@ angular.module('starter.controllers', [])
         $scope.$on('$ionicView.enter', function() {
             console.log("Entered: storeCtrl");
         });
+    })
+
+    .controller("testpageCtrl", function($scope) {
     });
