@@ -8,7 +8,7 @@ angular.module('starter.controllers', [])
         // listen for the $ionicView.enter event:
         //$scope.$on('$ionicView.enter', function(e) {
         //});
-
+        $scope.bar = true;
         // Form data for the login modal
         $scope.loginData = {};
 
@@ -46,11 +46,11 @@ angular.module('starter.controllers', [])
         $scope.scanBarcode = function() {
             $cordovaBarcodeScanner.scan().then(function(imageData) {
                 if(!imageData.cancelled) {
-                  $state.go('app.download', {downloadUrl: imageData.text});
+                  $state.go('app.download', {downloadUrl: imageData.text}, {location: replace});
                 }
                 else {
                   console.log("Cancelled");
-                  $state.go('app.browse');
+                  $state.go('app.browse',{}, {location: replace} );
                 }
             }, function(error) {
                 console.log("An error happened -> " + error);
@@ -101,5 +101,11 @@ angular.module('starter.controllers', [])
         });
     })
 
-    .controller("testpageCtrl", function($scope) {
+    .controller("testpageCtrl", function($scope, $ionicSideMenuDelegate) {
+
+
+        $scope.toggleLeft = function() {
+            $ionicSideMenuDelegate.toggleLeft();
+        };
+
     });
