@@ -106,6 +106,7 @@ angular.module('starter.controllers', [])
 
         $scope.toggleLeft = function() {
             $ionicSideMenuDelegate.toggleLeft();
+            
         };
 
     });

@@ -65,8 +65,9 @@
       });
 
         $(document).on('swiperight', function(event){
-            parent.angular.element(this).controller().toggleLeft();
-        })
+            var parentScope = window.parent.angular.element(window.frameElement).scope();
+            parentScope.toggleLeft();
+        });
 
 
     </script>
