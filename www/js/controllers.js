@@ -41,27 +41,6 @@ angular.module('starter.controllers', [])
         };
     })
 
-    .controller("scannerCtrl", function($scope, $cordovaBarcodeScanner, $state, $timeout) {
-
-        $scope.scanBarcode = function() {
-            $cordovaBarcodeScanner.scan().then(function(imageData) {
-                if(!imageData.cancelled) {
-                  $state.go('app.download', {downloadUrl: imageData.text}, {location: replace});
-                }
-                else {
-                  console.log("Cancelled");
-                  $state.go('app.browse',{}, {location: replace} );
-                }
-            }, function(error) {
-                console.log("An error happened -> " + error);
-            });
-        }
-
-        $scope.$on('$ionicView.enter', function() {
-            console.log("Entered: scannerCtrl");
-            $scope.scanBarcode();
-        });
-    })
 
     .controller("downloadCtrl", function($scope, $stateParams, $cordovaFileTransfer, $ionicPopup, $timeout) {
 
@@ -103,10 +82,8 @@ angular.module('starter.controllers', [])
 
     .controller("testpageCtrl", function($scope, $ionicSideMenuDelegate) {
 
-
         $scope.toggleLeft = function() {
             $ionicSideMenuDelegate.toggleLeft();
-
         };
 
     });
