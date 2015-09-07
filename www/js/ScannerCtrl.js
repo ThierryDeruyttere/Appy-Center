@@ -49,7 +49,9 @@ function displayInfo(imageData, $scope, $ionicPopup, $state){
                 text: '<b>Yes</b>',
                 type: 'button-positive',
                 onTap: function(e) {
-                    $state.go('app.download', {downloadUrl: link}, {location: replace});
+                    console.log("tapped");
+                    console.log(link);
+                    $state.go('app.download', {downloadUrl: link});
                 }
             }
         ]

@@ -44,8 +44,10 @@ angular.module('starter.controllers', [])
 
     .controller("downloadCtrl", function($scope, $stateParams, $cordovaFileTransfer, $ionicPopup, $timeout) {
 
+        console.log("Entered downloadCtrl");
         var url = $stateParams.downloadUrl;
-        var targetPath = cordova.file.documentsDirectory + "testImage.png";
+        console.log(url);
+        var targetPath = cordova.file.documentsDirectory + "testPage.appy";
         var trustHosts = true;
         var options = {};
 
@@ -80,10 +82,20 @@ angular.module('starter.controllers', [])
         });
     })
 
+    .controller("testpageDownloadCtrl", function($scope, $ionicSideMenuDelegate) {
+
+        $scope.toggleLeft = function() {
+            $ionicSideMenuDelegate.toggleLeft();
+        };
+
+        $scope.appy = cordova.file.documentsDirectory + "testPage.appy";
+    })
+
     .controller("testpageCtrl", function($scope, $ionicSideMenuDelegate) {
 
         $scope.toggleLeft = function() {
             $ionicSideMenuDelegate.toggleLeft();
         };
+
 
     });

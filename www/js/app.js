@@ -60,12 +60,22 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'Scanner
                 }
             })
 
-            .state('app.testpage', {
-                url: "/testpage",
+            .state('app.testpage-download', {
+                url: "/testpagedownload",
                 views: {
                     'menuContent': {
                         templateUrl: "templates/testpage.html",
                         controller: 'testpageCtrl'
+                    }
+                }
+            })
+
+            .state('app.testpage', {
+                url: "/testpage",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/testpage_download.html",
+                        controller: 'testpageDownloadCtrl'
                     }
                 }
             });
