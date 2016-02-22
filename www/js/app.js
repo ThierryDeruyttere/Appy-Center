@@ -20,6 +20,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'Scanner
         });
     })
 
+
     .config(function($stateProvider, $urlRouterProvider) {
         $stateProvider
 

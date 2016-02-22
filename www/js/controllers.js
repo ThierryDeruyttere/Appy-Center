@@ -100,7 +100,7 @@ angular.module('starter.controllers', [])
         $scope.trustSrc = function(src){
             if(src === undefined)
                 return;
-
+            
             if(src.indexOf("http://") == -1)
                 return $sce.trustAsResourceUrl("http://" + src);
 

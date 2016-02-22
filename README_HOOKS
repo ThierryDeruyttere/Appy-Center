@@ -1,0 +1,7 @@
+
+# https://gist.github.com/felipew/6e73a3d52607288f64b5
+
+# change example.com with your site
+# Add :NSAppTransportSecurity:NSExceptionDomains:example.com dict
+# Add :NSAppTransportSecurity:NSExceptionDomains:example.com:NSIncludesSubdomains bool YES
+# Add :NSAppTransportSecurity:NSExceptionDomains:example.com:NSExceptionAllowsInsecureHTTPLoads bool YES
