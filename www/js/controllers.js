@@ -91,6 +91,17 @@ angular.module('starter.controllers', [])
         $scope.appy = cordova.file.documentsDirectory + "testPage.appy";
     })
 
+    .controller("testpageInsertUrlCtrl", function($scope, $ionicSideMenuDelegate) {
+
+        $scope.$on('$ionicView.enter', function() {
+            console.log("Entered: testpageInsertUrlCtrl");
+        });
+
+
+    })
+
+
+
     .controller("testpageCtrl", function($scope, $ionicSideMenuDelegate) {
 
         $scope.toggleLeft = function() {

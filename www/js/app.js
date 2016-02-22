@@ -70,6 +70,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'Scanner
                 }
             })
 
+            .state('app.testpage-inserturl', {
+                url: "/inserturl",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/inserturl.html",
+                        controller: 'testpageInsertUrlCtrl'
+                    }
+                }
+            })
+
             .state('app.testpage', {
                 url: "/testpage",
                 views: {
