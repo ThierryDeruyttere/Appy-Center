@@ -2,15 +2,15 @@
     <div class="bar bar-header item-input-inset url_input">
         <label class="item-input-wrapper">
             <i class="icon ion-ios-search placeholder-icon"></i>
-            <input type="search" placeholder="appy url..." ng-model="appy_url">
+            <input type="search" placeholder="appy url..." ng-model="url">
         </label>
-        <!--<button class="button button-clear">
+        <button class="button button-clear" ng-click="appy_url = url">
             search
-        </button>-->
+        </button>
     </div>
 
     <div class="appy">
-        <iframe src="{{appy_url}}" style="width: 100vw; height: 100vh;" >
+        <iframe src="{{trustSrc(appy_url)}}" style="width: 100vw; height: 100vh;" >
 
         </iframe>
     </div>

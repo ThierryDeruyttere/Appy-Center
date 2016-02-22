@@ -91,13 +91,16 @@ angular.module('starter.controllers', [])
         $scope.appy = cordova.file.documentsDirectory + "testPage.appy";
     })
 
-    .controller("testpageInsertUrlCtrl", function($scope, $ionicSideMenuDelegate) {
+    .controller("testpageInsertUrlCtrl", function($scope, $sce) {
 
         $scope.$on('$ionicView.enter', function() {
             console.log("Entered: testpageInsertUrlCtrl");
         });
 
+        $scope.trustSrc = function(src){
 
+            return $sce.trustAsResourceUrl(src);
+        }
     })
 
 
