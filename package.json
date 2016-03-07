@@ -18,10 +18,10 @@
     "cordova-plugin-device",
     "cordova-plugin-console",
     "cordova-plugin-splashscreen",
-    "com.ionic.keyboard",
+    "ionic-plugin-keyboard",
     "phonegap-plugin-barcodescanner",
-    "phonegap-plugin-file-transfer",
-    "cordova-plugin-file-transfer"
+    "cordova-plugin-file-transfer",
+    "cordova-plugin-whitelist"
   ],
   "cordovaPlatforms": [
     "ios",
