@@ -29,7 +29,7 @@ angular.module('ScannerCtrl.controller', [])
 
 function displayInfo(imageData, $scope, $ionicPopup, $state){
     var link;
-
+    console.log(imageData.text);
     var json = JSON.parse((imageData.text).replace(/\\"/g, '"'));
     //console.log(json);
     link = json.link;
@@ -51,7 +51,8 @@ function displayInfo(imageData, $scope, $ionicPopup, $state){
                 onTap: function(e) {
                     console.log("tapped");
                     console.log(link);
-                    $state.go('app.download', {downloadUrl: link});
+                    $state.go("app.serve-appy", {appy:link});
+                   //$state.go('app.download', {downloadUrl: link});
                 }
             }
         ]

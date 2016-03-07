@@ -81,6 +81,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'Scanner
                 }
             })
 
+            .state('app.serve-appy', {
+                url: "/serve-appy/:appy",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/serve_appy.html",
+                        controller: 'serveAppyCtrl'
+                    }
+                }
+            })
+
             .state('app.testpage', {
                 url: "/testpage",
                 views: {
