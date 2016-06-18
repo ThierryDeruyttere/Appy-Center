@@ -75,10 +75,12 @@ angular.module('starter.controllers', [])
             });
     })
 
-    .controller("storeCtrl", function($scope) {
+    .controller("storeCtrl", function($scope, $state) {
         $scope.test = 3;
         $scope.$on('$ionicView.enter', function() {
             console.log("Entered: storeCtrl");
+
+            //test: $state.go("app.serve-appy", {appy: "192.168.1.104:8000/apps/test/test.html"});
         });
     })
 
@@ -91,6 +93,29 @@ angular.module('starter.controllers', [])
         $scope.appy = cordova.file.documentsDirectory + "testPage.appy";
     })
 
+    .controller("serveAppyCtrl", function($scope, $ionicSideMenuDelegate, $stateParams, $sce) {
+        $scope.$on('$ionicView.enter', function() {
+            console.log("Entered: serveAppyctrl");
+        });
+
+        $scope.toggleLeft = function() {
+            $ionicSideMenuDelegate.toggleLeft();
+        };
+
+        $scope.trustSrc = function(src){
+            if(src === undefined)
+                return;
+
+            if(src.indexOf("http://") == -1)
+                return $sce.trustAsResourceUrl("http://" + src);
+
+            return $sce.trustAsResourceUrl(src);
+        }
+
+        $scope.appy = $stateParams.appy;
+        console.log($scope.appy);
+    })
+
     .controller("testpageInsertUrlCtrl", function($scope, $sce) {
 
         $scope.$on('$ionicView.enter', function() {
@@ -100,12 +125,12 @@ angular.module('starter.controllers', [])
         $scope.trustSrc = function(src){
             if(src === undefined)
                 return;
-            
+
             if(src.indexOf("http://") == -1)
                 return $sce.trustAsResourceUrl("http://" + src);
 
             return $sce.trustAsResourceUrl(src);
-        }
+        };
     })
 
 
@@ -115,6 +140,5 @@ angular.module('starter.controllers', [])
         $scope.toggleLeft = function() {
             $ionicSideMenuDelegate.toggleLeft();
         };
-
 
     });
