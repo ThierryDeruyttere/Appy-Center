@@ -13,7 +13,7 @@ angular.module('ScannerCtrl.controller', [])
                 }
                 else {
                     console.log("Cancelled");
-                    $state.go('app.browse',{}, {location: replace} );
+                    $state.go('app.browse',{}, {location: 'replace'} );
                 }
             }, function(error) {
                 console.log("An error happened -> " + error);
