@@ -107,7 +107,7 @@ angular.module('starter.controllers', [])
                 return;
             
             return $sce.trustAsResourceUrl(src);
-        }
+        };
 
         $scope.appy = $stateParams.appy;
         console.log($scope.appy);
@@ -126,8 +126,6 @@ angular.module('starter.controllers', [])
             return $sce.trustAsResourceUrl(src);
         };
     })
-
-
 
     .controller("testpageCtrl", function($scope, $ionicSideMenuDelegate) {
 
